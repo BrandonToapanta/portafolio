@@ -1,0 +1,37 @@
+---
+import ExperienciaItem from "./ExperienciaItem.astro";
+
+const EXPERIENCE = [
+    {
+        date: "Abril 2023",
+        title: "Soporte al usuario",
+        description: [
+            "Soporte técnico TICs.",
+            " Soporte Usuario. ",
+            "Mantenimiento preventivo y correctivo de equipos informáticos y ofimáticos.",
+            "Gestión de base de datos SQL, actualización de datos por medio de scripts para reportaría.",
+        ],
+        skills: ["vsCode", "PHP", "MySQL"],
+    },
+    {
+        date: "Octubre 2022",
+        title: "Desarrollador Web",
+        description: [
+            "Desarrollar landing page responsivo, ocupando JavaScript, HTML y CSS. Permitiendo que el contenido sea expandible. ",
+            "Rediseñar landing page para el emprendimiento zen-sei.com, rescribiendo el código con un diseño actual, ocupando CSS y HTML. ",
+            "Desarrollar chatBot para las plataformas WhatsApp, Facebook e Instagram. Desarrollado con npm, JavaScript y versionado en github.",
+        ],
+        skills: ["VSCode", "SQL", "Python", "JavaScript", "PHP", "HTML", "CSS"],
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map((experiencie) => (
+            <li class="mb-10 ms-4">
+                <ExperienciaItem {...experiencie} />
+            </li>
+        ))
+    }
+</ol>
