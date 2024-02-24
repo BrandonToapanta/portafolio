@@ -22,7 +22,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
 		<div
-			class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+			class="background"
 		>
 		</div>
 		<Header />
@@ -41,4 +41,14 @@ const { title, description } = Astro.props;
 		display: flex;
 		flex-direction: column;
 	}
+	.background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+      background-attachment: fixed;
+      z-index: -10;
+    }
 </style>
