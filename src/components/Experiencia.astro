@@ -1,5 +1,48 @@
 ---
 import ExperienciaItem from "./ExperienciaItem.astro";
+import VSCode from "../icons/VSCode.astro";
+import PHP from "../icons/PHP.astro";
+import MySQL from "../icons/MySQL.astro";
+import Node from "../icons/Node.astro";
+import Python from "../icons/Python.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import HTML5 from "../icons/HTML5.astro";
+import CSS from "../icons/CSS.astro";
+
+const SKILLS = {
+    VSCODE: {
+        name: "VSCode",
+        icon: VSCode,
+    },
+    PHP: {
+        name: "PHP",
+        icon: PHP,
+    },
+    MYSQL: {
+        name: "MySQL",
+        icon: MySQL,
+    },
+    NODE: {
+        name: "Node.js",
+        icon: Node,
+    },
+    PYTHON: {
+        name: "Python",
+        icon: Python,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        icon: JavaScript,
+    },
+    HTML: {
+        name: "HTML5",
+        icon: HTML5,
+    },
+    CSS: {
+        name: "CSS",
+        icon: CSS,
+    },
+};
 
 const EXPERIENCE = [
     {
@@ -12,7 +55,7 @@ const EXPERIENCE = [
             "Mantenimiento preventivo y correctivo de equipos informáticos y ofimáticos.",
             "Gestión de base de datos SQL, actualización de datos por medio de scripts para reportaría.",
         ],
-        skills: ["vsCode", "PHP", "MySQL"],
+        skills: [SKILLS.VSCODE, SKILLS.PHP, SKILLS.MYSQL],
     },
     {
         date: "Octubre 2022",
@@ -24,14 +67,14 @@ const EXPERIENCE = [
             "Desarrollar chatBot para las plataformas WhatsApp, Facebook e Instagram. Desarrollado con npm, JavaScript y versionado en github.",
         ],
         skills: [
-            "VSCode",
-            "Node",
-            "SQL",
-            "Python",
-            "JavaScript",
-            "PHP",
-            "HTML",
-            "CSS",
+            SKILLS.VSCODE,
+            SKILLS.NODE,
+            SKILLS.MYSQL,
+            SKILLS.PYTHON,
+            SKILLS.JAVASCRIPT,
+            SKILLS.PHP,
+            SKILLS.HTML,
+            SKILLS.CSS,
         ],
     },
 ];
@@ -39,9 +82,26 @@ const EXPERIENCE = [
 
 <ol class="relative border-s border-gray-200 ml-3">
     {
-        EXPERIENCE.map((experiencie) => (
+        EXPERIENCE.map(({ date, title, description, empresa, skills }) => (
             <li class="mb-10 ms-4">
-                <ExperienciaItem {...experiencie} />
+                <ExperienciaItem
+                    date={date}
+                    title={title}
+                    description={description}
+                    empresa={empresa}
+                />
+                <ul class="flex flex-row mb-2 gap-x-2">
+                    {skills.map((skill) => (
+                        <li>
+                            <span
+                                class={`flex gap-x-2 rounded-full text-xs py-1 px-2 bg-slate-900/90 text-white`}
+                            >
+                                <skill.icon class="size-4" />
+                                {skill.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
             </li>
         ))
     }
