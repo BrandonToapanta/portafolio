@@ -1,12 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Badge from "../components/Badge.astro";
-import SocialPill from "../components/SocialPill.astro";
+import Hero from "../components/Hero.astro";
 import Experiencia from "../components/Experiencia.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import LinkdInIcon from "../icons/LinkedIn.astro";
-import GithubIcon from "../icons/Github.astro";
-import GmailIcon from "../icons/Gmail.astro";
 import BriefcaseIcon from "../icons/Briefcase.astro";
 ---
 
@@ -16,52 +12,7 @@ import BriefcaseIcon from "../icons/Briefcase.astro";
 >
 	<main class="text-white">
 		<SectionContainer id="top" class="pt-20 pb-44 lg:py-44 pb-30">
-			<div class="flex gap-4 mb-4">
-				<img
-					src="https://cdn.leonardo.ai/users/0f90cc9e-e9b4-49c3-9ae5-9f80f24987cb/generations/1c244a46-2cf1-4044-864c-674114150eba/Default_crea_una_foto_de_perfil_donde_debe_de_mostrar_una_chic_1.jpg"
-					alt="Brandon foto"
-					class="rounded-full shadow-lg size-20"
-				/><a
-					href="https://www.linkedin.com/in/brandon-toapanta-8a87b4199/"
-					target="_blank"
-					rel="noopener"
-					class="flex items-center transition md:justify-center md:hover:scale-105"
-				>
-					<Badge>Disponible para tranajer</Badge>
-				</a>
-			</div>
-			<h1
-				class="text-2xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-10"
-			>
-				¡Hola, soy Brandon!
-			</h1>
-			<h2 class="text-2xl text-pretty">
-				<span class="font-bold text-blue-300"
-					>+1 años de experiencia.</span
-				>
-				<span class="text-orange-200/90"
-					>Desarrollador web y tecnologo de Desarrollo de Software.</span
-				>
-				<span class="text-indigo-200/90"> De Quito - Ecuador.</span>
-				<span class="opacity-80"
-					>Apasionado del desarrollo de Software desde los 15 años,
-					con ideas inovadoras y modernas.</span
-				>
-			</h2>
-
-			<nav class="flex flex-wrap gap-4 mt-8">
-				<SocialPill
-					href="https://www.linkedin.com/in/brandon-toapanta-8a87b4199/"
-				>
-					<LinkdInIcon class="size-6" />LinkdIn
-				</SocialPill>
-				<SocialPill href="https://github.com/BrandonToapanta">
-					<GithubIcon class="size-6" />Github
-				</SocialPill>
-				<SocialPill href="#">
-					<GmailIcon class="size-6" />brandontoapanta12345@gmail.com
-				</SocialPill>
-			</nav>
+			<Hero />
 		</SectionContainer>
 		<SectionContainer id="experiencia">
 			<h2 class="text-2xl mb-6 font-semibold flex gap-x-3 items-center">
