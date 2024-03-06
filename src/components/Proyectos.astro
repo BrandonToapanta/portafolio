@@ -1,0 +1,92 @@
+---
+import VSCode from "../icons/VSCode.astro";
+import PHP from "../icons/PHP.astro";
+import MySQL from "../icons/MySQL.astro";
+import Java from "../icons/Java.astro";
+import Github from "../icons/Github.astro";
+import LinkButton from "../components/LinkButton.astro";
+const TAGS = {
+	VSCODE: {
+		name: "VSCode",
+		icon: VSCode,
+	},
+	PHP: {
+		name: "PHP",
+		icon: PHP,
+	},
+	MYSQL: {
+		name: "MySQL",
+		icon: MySQL,
+	},
+	JAVA: {
+		name: "Java",
+		icon: Java,
+	},
+};
+
+const PROJECTS = [
+	{
+		title: "API REST - Tienda en linea",
+		description:
+			"API REST completa sobre una tienda en linea, permite traer, crear, actualizar e eliminar. Pensado en la produccion, obtiene todos los datos necesarios para su implemntacion, y para la tienda.",
+		github: "https://github.com/BrandonToapanta/API_store_online",
+		image: "/API_store.webp",
+		tags: [TAGS.VSCODE, TAGS.PHP, TAGS.MYSQL],
+	},
+	{
+		title: "Tienda online - Prototipo de tienda online Santa Maria",
+		description:
+			"Tienda online para Santa Maria, donde permite, realizar gestionamiento de producto, segimiento de pedido, reserva de pedido y carrito de compras",
+		github: "https://github.com/BrandonToapanta/example_sotre_online",
+		image: "/Tienda_online_java.webp",
+		tags: [TAGS.JAVA],
+	},
+];
+---
+
+<div class="flex flex-col gap-y-16">
+	{
+		PROJECTS.map(({ image, title, description, tags, github }) => (
+			<article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+				<div class="w-full md:w-1/2">
+					<div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+						<img
+							alt="Recién llegado vs 5 años en Nueva Zelanda"
+							class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+							loading="lazy"
+							src={image}
+						/>
+					</div>
+				</div>
+
+				<div class="w-full md:w-1/2 md:max-w-lg">
+					<h3 class="text-2xl font-boldtext-gray-100">{title}</h3>
+					<div class="flex flex-wrap mt-2">
+						<ul class="flex flex-row mb-2 gap-x-2">
+							{tags.map((tag) => (
+								<li>
+									<span
+										class={`flex gap-x-2 rounded-full text-xs py-1 px-2 `}
+									>
+										<tag.icon class="size-4" />
+										{tag.name}
+									</span>
+								</li>
+							))}
+						</ul>
+
+						<div class="mt-2 text-gray-400">{description}</div>
+						<footer class="flex items-end justify-start mt-4 gap-x-4">
+							{github && (
+								<LinkButton href={github}>
+									<Github class="size-6" />
+									Code
+								</LinkButton>
+							)}
+						</footer>
+					</div>
+				</div>
+			</article>
+		))
+	}
+</div>
