@@ -5,6 +5,9 @@ import MySQL from "../icons/MySQL.astro";
 import Java from "../icons/Java.astro";
 import Github from "../icons/Github.astro";
 import LinkButton from "../components/LinkButton.astro";
+import ANGULAR from "../icons/Angular.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import BOOTSTRAP from "../icons/Bootstrap.astro";
 const TAGS = {
 	VSCODE: {
 		name: "VSCode",
@@ -22,9 +25,37 @@ const TAGS = {
 		name: "Java",
 		icon: Java,
 	},
+	ANGULAR: {
+		name: "Angular",
+		icon: ANGULAR,
+	},
+	TYPESCRIPT: {
+		name: "TypeScript",
+		icon: TypeScript,
+	},
+	BOOTSTRAP: {
+		name: "Bootstrap",
+		icon: BOOTSTRAP,
+	},
 };
 
 const PROJECTS = [
+	{
+		title: "Sistema de registro para los empleado - Back-end",
+		description:
+			"Desarrollo de la API desarrollada con PHP, obtiene un validador de cedula para los empleados, barra de busqueda con dos parametros opcionales.",
+		github: "https://github.com/BrandonToapanta/api_worker",
+		image: "/Back-end.jpeg",
+		tags: [TAGS.VSCODE, TAGS.PHP, TAGS.MYSQL],
+	},
+	{
+		title: "Sistema de registro para los empleado - Front-end",
+		description:
+			"Desarrollo de sistema de registro de empledos, donde se puede obtener toda la información mas relevante, de igual manera poder actualicar, y generar un reporte",
+		github: "https://github.com/BrandonToapanta/Fond_end_worker",
+		image: "/Front-end.png",
+		tags: [TAGS.VSCODE, TAGS.TYPESCRIPT, TAGS.BOOTSTRAP, TAGS.ANGULAR],
+	},
 	{
 		title: "API REST - Tienda en linea",
 		description:
