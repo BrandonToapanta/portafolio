@@ -8,6 +8,8 @@ import Python from "../icons/Python.astro";
 import JavaScript from "../icons/JavaScript.astro";
 import HTML5 from "../icons/HTML5.astro";
 import CSS from "../icons/CSS.astro";
+import LARAVEL from "../icons/Laravel.astro";
+import ANGULAR from "../icons/Angular.astro";
 
 const SKILLS = {
     VSCODE: {
@@ -42,16 +44,41 @@ const SKILLS = {
         name: "CSS",
         icon: CSS,
     },
+    LARAVEL: {
+        name: "Laravel",
+        icon: CSS,
+    },
+    ANGULAR: {
+        name: "Angular",
+        icon: CSS,
+    },
 };
 
 const EXPERIENCE = [
+    {
+        date: "Actual",
+        title: "Desarrollador Back-end",
+        empresa: "BIM SOLUCIONES",
+        description: [
+            "Desarrollo de automatizaciones.",
+            "Desarrollo de CRM para la unión de Whatsapp Business API y DeUna como método de pago.",
+            "Desarrollo de ChatBots.",
+        ],
+        skills: [
+            SKILLS.VSCODE,
+            SKILLS.PHP,
+            SKILLS.LARAVEL,
+            SKILLS.JAVASCRIPT,
+            SKILLS.MYSQL,
+        ],
+    },
     {
         date: "Abril 2023",
         title: "Soporte al usuario",
         empresa: "SENESCYT",
         description: [
             "Soporte técnico TICs.",
-            " Soporte Usuario. ",
+            "Soporte Usuario.",
             "Mantenimiento preventivo y correctivo de equipos informáticos y ofimáticos.",
             "Gestión de base de datos SQL, actualización de datos por medio de scripts para reportaría.",
         ],
